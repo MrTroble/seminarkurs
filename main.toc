@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Historie}{3}{section.1}% 
+\contentsline {section}{\numberline {2}Turing Maschine}{4}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Lambda Calculus - Alan Church}{4}{subsection.2.1}% 
+\contentsline {section}{\numberline {3}Turingtest}{5}{section.3}% 
