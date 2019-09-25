@@ -1,0 +1,29 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\author{Clara Maier, Nico Fröhlich}
+\title{Seminarkurs - Alan Turing}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\include{vorwort}
+\include{turinghistory}
+\include{turingmashine}
+\include{lambda}
+\include{turingtest}
+
+\bibliography{main}
+\bibliographystyle{ieeetr}
+
+\end{document}

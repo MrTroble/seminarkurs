@@ -9,7 +9,7 @@ Der Lambda calculus besteht aus 3 Grundgesetzen.
 \item Man weiß nicht was die Funktionen tun.
 \end{itemize}
 Ausführlicher: Es muss ein Weg vorhanden sein eine Funktion zu definieren, dafür gibt es eine Mathematische Definition. Die Erzeugung einer Funktion ist aber nicht auf die Mathematische Notation beschränkt, ganz im Gegenteil die Notationen im Modernen Lambda Programming weichen, nicht zu Letzt aus technischen Gründen, stark von der Mathematischen Notation ab. Dabei MÜSSEN im originalen Lambda Ein- und Ausgaben definiert werden. Auch dies weicht im modernen Lambda ebenfalls ab. Hier können Ein- und Ausgaben definiert werden, müssen es aber nicht. Dies führt zu mehr Flexibilität, so können die Lambda Funktionen auch an stellen Eingesetzt werden wo nicht direkt Daten verarbeitet werden.
-Als letztes kennt man beim Ausführen der Funktion den Inhalt der Funktion nicht. Das ist der große unterschied zu anderen Mathematischen Funktionen. Wie genau dies Funktioniert wird im übernächsten Kapitel besser klar.
+Als letztes kennt man beim Ausführen der Funktion den Inhalt der Funktion nicht. Das ist der große unterschied zu anderen Mathematischen Funktionen. Normaler weise 
 \subsection{Mathematische Notation}
 \begin{eqnarray}
 •
