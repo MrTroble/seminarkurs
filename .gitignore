@@ -11,3 +11,4 @@ main.synctex.gz
 /build/
 /_minted-main/
 *.lof
+*.blg
