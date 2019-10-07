@@ -9,3 +9,5 @@ main.synctex.gz
 *.toc
 *.bak
 /build/
+/_minted-main/
+*.lof
