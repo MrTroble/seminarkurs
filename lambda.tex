@@ -4,7 +4,7 @@ Der Lambda calculus ist ein Datenverarbeitungskonzept erfunden von Alonzo Church
 \subsection{Gesetze des Lambda calculus}
 Der Lambda calculus besteht aus 3 Grundgesetzen.
 \begin{itemize}
-\item Funktionen können erstellt werden.
+\item Funktionen können definiert werden.
 \item diese können/müssen Daten Ein und Ausgeben.
 \item Funktionen können Angewendet werden
 \end{itemize}
@@ -49,5 +49,17 @@ Gegeben sind zwei Funktionen.
 TRUE = \lambda x. \lambda y. x
 FALSE = \lambda x. \lambda y. y
 \end{equation}
-Diese zwei Funktionen sollen nun 
+Diese zwei Funktionen sollen nun zu einem Logischen Und-Gatter zusammen gefügt werden.
+Dabei entsteht folgende Funktion.
+\begin{equation}
+AND = \lambda x. \lambda y. x y x
+\end{equation}
+Nun wird auf die und Funktion als Beispiel die Funktionen TRUE und FALSE angewendet. Dazu werden einfach die variablen mit den als Eingabe verwendeten Funktionen ausgetauscht.
+\begin{equation}
+AND TRUE TRUE 
+= (\lambda x. \lambda y. x y x) TRUE TRUE TRUE
+= TRUE TRUE TRUE
+= (\lambda x. \lambda y. x) TRUE TRUE
+= TRUE
+\end{equation}
 \footnote{Kapitel 4 von Nico}\cite{lambdacalculus} 
