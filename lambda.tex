@@ -10,32 +10,6 @@ Der Lambda calculus besteht aus 3 Grundgesetzen.
 \item Funktionen können Angewendet werden
 \end{itemize}
 Ausführlicher: Es muss ein Weg vorhanden sein eine Funktion zu definieren, dafür gibt es eine Mathematische Definition. Die Erzeugung einer Funktion ist aber nicht auf die Mathematische Notation beschränkt, ganz im Gegenteil, die Notationen im Modernen Lambda Programming weichen, nicht zuletzt aus technischen Gründen, stark von der Mathematischen Notation ab. Dabei müssen im originalen Lambda Ein- und Ausgaben definiert werden. Dies weicht im modernen Lambda ebenfalls von der originalen Definition ab. Hier können Ein- und Ausgaben definiert werden, müssen es aber nicht. Dies führt zu mehr Flexibilität, so können die Lambda Funktionen auch an stellen Eingesetzt werden wo nicht direkt Daten verarbeitet werden. Als letztes kennt man beim Ausführen der Funktion den Inhalt der Funktion nicht. Das ist der große unterschied zu anderen Mathematischen Funktionen.\cite{lambdacalculus}
-\subsection{Lambda in Programmiersprachen}
-Schauen wir uns zur Erläuterung ein Beispiel aus Java an.
-Es gibt eine Funktionsdeklaration die der Implementation vorgibt welche Ein und Ausgänge
-eine gewisse Lambda Funktion hat sowie ihren Namen.
-\begin{minted}{java}
-@FunctionalInterface
-public interface TestFunctionalInterface {
-	public int test(double d);
-}
-\end{minted}
-Die Funktion wird nun als Interface übergeben und von einer ausführenden Funktion genutzt.
-Was hier auffällt ist das die ausführende Funktion nicht weiß was die Funktion eigentlich tut.
-\begin{minted}{java}
-public void runTest(TestFunctionalInterface interf) {
-	int testres = interf.test(89.1);
-	// Mache etwas mit dem resultat
-}
-\end{minted}
-Normalerweise müsste man dieses Interface überschreiben und dort dann implementieren was die Funktion tun würde. Hier gibt es allerdings eine separate schreib weise um eine Funktion zu definieren. Die wie folgt durch die Zeichen Kombination -> eingeleitet wird.
-Rechts von dem sog. Lambda operator stehen die Inputs rechts die Operationen bzw. Outputs 
-Im folgenden wird die gerade erzeugte
-\begin{minted}{java}
-public void main() {
-	runTest(input -> (int)Math.ceil(input));
-}
-\end{minted}
 
 \subsection{Mathematische Notation}
 Für den Ursprünglichen Lambda calculus definiert von Alonzo Church gibt es auch 
@@ -57,11 +31,54 @@ Dabei entsteht folgende Funktion.
 \begin{equation}
 AND = \lambda x. \lambda y. x y x
 \end{equation}
-Nun wird auf die und Funktion als Beispiel die Funktionen TRUE und FALSE angewendet. Dazu werden einfach die variablen mit den als Eingabe verwendeten Funktionen ausgetauscht.
+Nun wird auf die und Funktion als Beispiel die Funktionen TRUE und FALSE angewendet. Dazu werden einfach die variablen mit den als Eingabe verwendeten Funktionen ausgetauscht. In diesem konkreten Beispiel wird TRUE und TRUE auf die Funktion AND angewendet
 \begin{equation}
 \text{AND TRUE TRUE} = (\lambda x. \lambda y. x y x) \text{ TRUE TRUE} 
 \end{equation}
+Hier wird detailliert aufgeschrieben wie man die Funktionen auflöst. Man nimmt immer die Funktion die am weitesten links steht und schreibt auf wie sie aufgebaut ist. Die Nachfolgenden Methoden bzw. Daten werden nun als input verwendet. In diesem Fall natürlich die kodierten Funktionen. In diesem Fall ist die Funktion AND definiert als $x y x$
+und gegeben sind die Inputs $x = TRUE$ und $y = TRUE$ dies wird nun wieder hingeschrieben und es wird weiter aufgelöst. 
 \begin{equation}
 \text{ TRUE TRUE TRUE} = (\lambda x. \lambda y. x) \text{ TRUE TRUE} = \text{TRUE}
 \end{equation}
-\footnote{Kapitel 4 von Nico}\cite{lambdacalculus} 
+Nun wird auf die ganz links stehende Funktion TRUE die Inputs $x = TRUE$ und $y = TRUE$ angewendet da sich TRUE immer zum x auflöst ist das Ergebniss als AND TRUE TRUE = TRUE
+Und dies bestätigt die Annahme. Um ein gegen Beispiel zu bringen wird im nächsten Beispiel FALSE und TRUE übergeben.
+\begin{equation}
+\text{AND FALSE TRUE = FALSE TRUE FALSE = FALSE}
+\end{equation}
+Und auch hier funktioniert die Und-Funktion wie gedacht. So kann man alle Möglichen Arten von Daten Transformation in Lambda Funktionen darstellen. 
+\cite{lambdacalculus}
+
+\subsection{Lambda in Programmiersprachen}
+Schauen wir uns nun zur weiteren Erläuterung ein Beispiel aus Java an. Diese Beispiele sind weitaus Moderner und weichen in Teilen von der Originalen Definition ab beziehungsweise fügen neue Regeln hinzu. Es gibt eine Funktionsdeklaration die der Implementation vorgibt welche Ein und Ausgänge eine gewisse Lambda Funktion hat sowie ihren Namen.
+\begin{minted}{java}
+@FunctionalInterface
+public interface TestFunctionalInterface {
+	public int test(double d);
+}
+\end{minted}
+Die Funktion wird nun als Interface übergeben und von einer ausführenden Funktion genutzt.
+Was hier auffällt ist das die ausführende Funktion nicht weiß was die Funktion eigentlich tut.
+\begin{minted}{java}
+public void runTest(TestFunctionalInterface interf) {
+	int testres = interf.test(89.1);
+	// Mache etwas mit dem resultat
+}
+\end{minted}
+Normalerweise müsste man dieses Interface überschreiben und dort dann implementieren was die Funktion tun würde. Hier gibt es allerdings eine separate schreib weise um eine Funktion zu definieren. Die wie folgt durch die Zeichen Kombination $->$ eingeleitet wird. Rechts von dem sog. Lambda operator stehen die Inputs rechts die Operationen bzw. Outputs. Im folgenden wird die gerade erzeugte Funktion auf \emph{runTest} angewendet.
+\begin{minted}{java}
+public void main() {
+	runTest(input -> (int)(input + 1));
+}
+\end{minted}
+Und nicht nur Java hat diese Art Paradigma übernommen, auch C++ zum Beispiel hat (zusätzlich zu den bereits vorhandenen Funktions Pointern) Lambda Funktionen eingeführt.
+In C++ haben die Lambda Funktionen eine leicht veränderte Anwendungsstruktur.
+\begin{minted}{c++}
+playercontroller = [](Input* input) { 
+topdown.positiony += input->y1; 
+topdown.positionx -= input->x1;
+setTopDownCamera(&topdown); 
+};
+\end{minted}
+Hier wird eine Player Controller Funktion in meiner Engine definiert. Der Player Controller bekommt die letzten Inputs des Players in die Funktion und verarbeitet diese dann weiter.
+
+\footnote{Kapitel 4 von Nico}
