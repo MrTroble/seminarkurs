@@ -1,8 +1,15 @@
 \section{Turing Maschine}
-Die Turingmaschine wurde 1936 von Alan Turing entwickelt und ist rein theoretisch, denn eine Maschine exakt wie es Turing beschreibt wurde niemals gebaut, da dies auch nicht sinnvoll wäre. Turing entwickelte diese Theorie als er sich mit dem Entscheidungsproblem von David Hilber und Wilhelm Ackermann beschäftigte(...). Die Turing Maschine ist die heutige Grundlage vieler Programmiersprachen, wie Java, C++ or Phyton und das obwohl Turing diese Theorie aufstellte als es noch keine Computer gab, weswegen er auch als "Vater der modernen Informatik" bekannt ist.
+Die Turingmaschine wurde 1936 von Alan Turing entwickelt und ist rein theoretisch, denn eine Maschine exakt wie es Turing beschreibt wurde niemals gebaut, da dies auch nicht sinnvoll wäre. Turing entwickelte diese Theorie aufrund des Entscheidungsproblem von David Hilber und Wilhelm Ackermann \cite{theessentialturing}. Die Turing Maschine ist die heutige Grundlage vieler Programmiersprachen, wie Java, C++ oder Phyton. Diese Programmiersprachen werden auch als Turing complete bezeichnet, was so viel heißt wie dass die Turing Maschine diese theoretischer weiße emulieren kann.
 
-Funktion: Die Turing Maschine kann man sich wie ein unendlich langes Band vorstellen das sich in beide Richtungen bewegen kann und Kästchen mit Nullen, Einsen oder leeren Feldern beinhaltet. Zusätzlich gibt es einen Kasten("Heap") der die Zahlen je nach Anweisung einlesen, löschen und ändern kann.
+\subsection{Funktion:} Die Turing Maschine kann man sich wie ein unendlich langes Band vorstellen das sich in beide Richtungen bewegen kann und Felder mit Nullen, Einsen oder leeren Feldern beinhaltet. Zusätzlich gibt es einen Kasten("Heap") der die Zahlen je nach Anweisung einlesen, löschen und ändern kann.
 
-Beispiel: Zur besseren Vorstellung, erkläre ich das Ganze nochmal an einem Beispiel. Nehmen wir mal an wir wollen, dass die Turing Maschine für uns unendlich Hochzählt. So kann man dies mit nur zwei einfachen Befehlen ausführen. 
-Befehl 1 = Bei einer 1, ändere diese in eine 0 und gehe nach links
+       <-- ["H"]-->
+             |
+             v
+|0|0| |1|1|0| |0|0| | | | |
+
+\subsection{Beispiel:} Zur besseren Vorstellung, erkläre ich das Ganze nochmal an einem Beispiel. Nehmen wir mal an wir wollen, dass die Turing Maschine für uns unendlich Hochzählt. So kann man dies mit nur zwei einfachen Befehlen ausführen. 
+Befehl 1 = Bei einer 1, ändere diese in eine 0 und gehe nach links 
 Befehl 2 = Bei einer 0 oder einer Lücke, ändere diese in eine 1 und gehe zum letzten Bit der Zahl
+
+Die Befehle für die Turing Maschine sind heute die Programme in unseren Computern.
