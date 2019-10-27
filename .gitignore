@@ -12,3 +12,5 @@ main.synctex.gz
 /_minted-main/
 *.lof
 *.blg
+*.lol
+main.pdf
