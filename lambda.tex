@@ -23,6 +23,10 @@ Gegeben sind zwei Funktionen.
 \begin{equation}
 TRUE = \lambda x. \lambda y. x
 \end{equation}
+In der originalen Notation wird der Punkt und das zweite Lambda bei den Inputs weggelassen. Wir bleiben aber bei der heutig genutzten version der Übersichtlichkeit wegen. \cite{churchcalculi}
+\begin{equation}
+TRUE = \lambda xy. x
+\end{equation}
 \begin{equation}
 FALSE = \lambda x. \lambda y. y
 \end{equation}
@@ -33,17 +37,17 @@ AND = \lambda x. \lambda y. x y x
 \end{equation}
 Nun wird auf die und Funktion als Beispiel die Funktionen TRUE und FALSE angewendet. Dazu werden einfach die variablen mit den als Eingabe verwendeten Funktionen ausgetauscht. In diesem konkreten Beispiel wird TRUE und TRUE auf die Funktion AND angewendet
 \begin{equation}
-\text{AND TRUE TRUE} = (\lambda x. \lambda y. x y x) \text{ TRUE TRUE} 
+AND\:\:TRUE\:\:TRUE = (\lambda x. \lambda y. x y x) TRUE\:\:TRUE 
 \end{equation}
 Hier wird detailliert aufgeschrieben wie man die Funktionen auflöst. Man nimmt immer die Funktion die am weitesten links steht und schreibt auf wie sie aufgebaut ist. Die Nachfolgenden Methoden bzw. Daten werden nun als input verwendet. In diesem Fall natürlich die kodierten Funktionen. In diesem Fall ist die Funktion AND definiert als $x y x$
 und gegeben sind die Inputs $x = TRUE$ und $y = TRUE$ dies wird nun wieder hingeschrieben und es wird weiter aufgelöst. 
 \begin{equation}
-\text{ TRUE TRUE TRUE} = (\lambda x. \lambda y. x) \text{ TRUE TRUE} = \text{TRUE}
+TRUE\:\:TRUE\:\:TRUE = (\lambda x. \lambda y. x) TRUE\:\:TRUE = TRUE
 \end{equation}
 Nun wird auf die ganz links stehende Funktion TRUE die Inputs $x = TRUE$ und $y = TRUE$ angewendet da sich TRUE immer zum x auflöst ist das Ergebniss als AND TRUE TRUE = TRUE
 Und dies bestätigt die Annahme. Um ein gegen Beispiel zu bringen wird im nächsten Beispiel FALSE und TRUE übergeben.
 \begin{equation}
-\text{AND FALSE TRUE = FALSE TRUE FALSE = FALSE}
+AND\:\:FALSE\:\:TRUE = FALSE\:\:TRUE\:\:FALSE = FALSE
 \end{equation}
 Und auch hier funktioniert die Und-Funktion wie gedacht. So kann man alle Möglichen Arten von Daten Transformation in Lambda Funktionen darstellen. 
 \cite{lambdacalculus}
