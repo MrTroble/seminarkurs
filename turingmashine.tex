@@ -1,15 +1,40 @@
 \section{Turing Maschine}
 Die Turingmaschine wurde 1936 von Alan Turing entwickelt und ist rein theoretisch, denn eine Maschine exakt wie es Turing beschreibt wurde niemals gebaut, da dies auch nicht sinnvoll wäre. Turing entwickelte diese Theorie aufrund des Entscheidungsproblem von David Hilber und Wilhelm Ackermann \cite{theessentialturing}. Die Turing Maschine ist die heutige Grundlage vieler Programmiersprachen, wie Java, C++ oder Phyton. Diese Programmiersprachen werden auch als Turing complete bezeichnet, was so viel heißt wie dass die Turing Maschine diese theoretischer weiße emulieren kann.
 
-\subsection{Funktion:} Die Turing Maschine kann man sich wie ein unendlich langes Band vorstellen das sich in beide Richtungen bewegen kann und Felder mit Nullen, Einsen oder leeren Feldern beinhaltet. Zusätzlich gibt es einen Kasten("Heap") der die Zahlen je nach Anweisung einlesen, löschen und ändern kann.
+\subsection{Funktion} 
+Die Turing Maschine beinhaltet lediglich zwei Bauteile.
+\begin{enumerate}
+\item  Ein unendlich langes Band, dass in eine Kette von horizontalen Kästchen eingteilt ist. Jedes dieser Kästchen kann entweder eine 0,eine 1 oder auch nichts beinhalten. Zudem kann das Band nach rechts und nach links verschoben werden.
+\item Ein Kasten auch "Heap" genannt, der die Zahlen auf dem Band einlesen,löschen und ändern kann.
+\end{enumerate}
+ 
 
-       <-- ["H"]-->
-             |
-             v
-|0|0| |1|1|0| |0|0| | | | |
 
-\subsection{Beispiel:} Zur besseren Vorstellung, erkläre ich das Ganze nochmal an einem Beispiel. Nehmen wir mal an wir wollen, dass die Turing Maschine für uns unendlich Hochzählt. So kann man dies mit nur zwei einfachen Befehlen ausführen. 
-Befehl 1 = Bei einer 1, ändere diese in eine 0 und gehe nach links 
-Befehl 2 = Bei einer 0 oder einer Lücke, ändere diese in eine 1 und gehe zum letzten Bit der Zahl
+\begin{tikzpicture}[
+squarednode/.style={rectangle, draw=black!60, very thick, minimum size=20mm}
+]
+%Nodes
+\node[squarednode][right=0] {1};
+\node[squarednode][right=2]{ };
+\node[squarednode][right=4]{ };
+\node[squarednode][right=6]{1};
+\node[squarednode][right=8]{1};
+\node[squarednode][right=10]{0};
+ 
+%Lines
+\draw[black](4,3) -- (5,1.2) -- (6,3) -- cycle;
+\filldraw[black] (4.3,2.7) circle (1pt) node[anchor=west] {"Heap"}; %??????
 
-Die Befehle für die Turing Maschine sind heute die Programme in unseren Computern.
+
+\end{tikzpicture}
+
+
+
+\subsection{Beispiel} Zur besseren Vorstellung, erkläre ich das Ganze nochmal an einem Beispiel. Nehmen wir mal an wir wollen, dass die Turing Maschine für uns unendlich Hochzählt. So kann man dies mit nur zwei einfachen Befehlen ausführen. 
+
+\begin{itemize}
+\item Befehl 1 = Bei einer 1, ändere diese in eine 0 und gehe nach links 
+\item Befehl 2 = Bei einer 0 oder einer Lücke, ändere diese in eine 1 und gehe zum letzten Bit der Zahl 
+\end{itemize}
+
+Die Befehle für die Turing Maschine kann man sich also heute wie die Programme auf unseren Computern vorstellen.
