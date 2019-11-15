@@ -5,28 +5,15 @@ Die Turingmaschine wurde 1936 von Alan Turing entwickelt und ist rein theoretisc
 Die Turing Maschine beinhaltet lediglich zwei Bauteile.
 \begin{enumerate}
 \item  Ein unendlich langes Band, dass in eine Kette von horizontalen Kästchen eingteilt ist. Jedes dieser Kästchen kann entweder eine 0,eine 1 oder auch nichts beinhalten. Zudem kann das Band nach rechts und nach links verschoben werden.
-\item Ein Kasten auch "Heap" genannt, der die Zahlen auf dem Band einlesen,löschen und ändern kann.
+\item Ein Kasten auch "Heap" oder auch "Scanner" genannt, der die Zahlen auf dem Band einlesen, löschen und ändern kann.
 \end{enumerate}
  
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=1]{TuringmashinePicture.png}
+\caption{\cite{theessentialturing}}
+\end{figure}
 
-
-\begin{tikzpicture}[
-squarednode/.style={rectangle, draw=black!60, very thick, minimum size=20mm}
-]
-%Nodes
-\node[squarednode][right=0] {1};
-\node[squarednode][right=2]{ };
-\node[squarednode][right=4]{ };
-\node[squarednode][right=6]{1};
-\node[squarednode][right=8]{1};
-\node[squarednode][right=10]{0};
- 
-%Lines
-\draw[black](4,3) -- (5,1.2) -- (6,3) -- cycle;
-\filldraw[black] (4.3,2.7) circle (1pt) node[anchor=west] {"Heap"}; %??????
-
-
-\end{tikzpicture}
 
 
 
@@ -38,3 +25,11 @@ squarednode/.style={rectangle, draw=black!60, very thick, minimum size=20mm}
 \end{itemize}
 
 Die Befehle für die Turing Maschine kann man sich also heute wie die Programme auf unseren Computern vorstellen.
+
+\subsection{Codebeispiel}
+Dieser Code aus Java macht praktisch genau das Selbe, wie das kleine Beispielprogramm der Turing Maschine. Das Einzige was auffällt ist, dass dieses Programm nur bis 1000 zählt, da unsere Turing Maschine einen unendlichen Speicher besitzt anders wie jeder PC auf der Welt.
+
+\begin{minted}{java}
+for (int i = 0; i < 1000; i++) {
+		}			
+\end{minted}
