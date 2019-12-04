@@ -1,24 +1,24 @@
 \section{Church-Turing Thesis}
 In diesem Kapitel geht es um die Church-Turing Thesis, was sie besagt und was für Auswirkungen sie hat. Außerdem wird im Zuge dessen die Turing Maschine und der Lambda calculus gegenübergestellt.
 \subsection{Die These}
-Die These besagt, dass alle möglichen Rechnungen bzw. Datenverarbeitungen mit dem Modell der Turing Maschine dargestellt werden können. Des weiteren ist der Lambda calculus mit der Turing Maschine gleich zu stellen, das heißt, dass ebenfalls jeder Datensatz mit Hilfe diese Paradigma verarbeitet werden können. Beide Systeme sind also nur Unterschiedliche Darstellungsweisen für Rechnungen bzw. Datenverarbeitung.
+Die These besagt, dass alle möglichen Rechnungen beziehungsweise Datenverarbeitungen mit dem Modell der Turing Maschine dargestellt werden können. Des weiteren ist der Lambda calculus mit der Turing Maschine gleich zu stellen, das heißt, dass ebenfalls jeder Datensatz mit Hilfe dieser Paradigmen verarbeitet werden können. Beide Systeme sind also nur unterschiedliche Darstellungsweisen für Rechnungen beziehungsweise Datenverarbeitung.
 \cite{sep-church-turing}
 \subsection{Gegenüberstellung}
-Wie bereits erwähnt hat der Lambda calculus keinen internen "State", dies steht im Kontrast zur Turing Maschine diese hat einen internen "Speicher". Churchs Theorie basierte eher auf der Verarbeitung von ganz Zahlen bei der Speicherbetrachtung nicht im Vordergrund war. Damit war er allerdings ein paar Jahre zu früh, denn die Turing Maschine entwickelte sich schnell zum Standardmodell. Dies ist dem primär dem geschuldet, dass die Betrachtung von Speichern zu dieser Zeit und bis heute ein wichtiger Bestandteil der Informatik bzw. der Logischen Mathematik sind. Tatsächlich erkannte Gödel den Lambda calculus erst, an als er das Papier zur Turing Maschine sah und die Äquivalenz beider Systeme erkannte.\cite{sep-church-turing} In der Heutigen Zeit wiederum wird durch zunehmende Abstraktion und Komplexität der Lambda calculus wieder wichtiger. Er taucht vermehrt in den gängigen Programmiersprachen auf. So bekamen Java, C\# und C++ in der letzten Zeit vermehrt Lambda unterstützen. Dies ist besonders dadurch aufkommend, dass man sich keine Gedanken über den Heap bzw. die Speicher an sich machen muss. Dies kann die Arbeit und Komplexität sowie Fehleranfälligkeit reduzieren.
+Wie bereits erwähnt hat der Lambda calculus keinen internen "State", dies steht im Kontrast zur Turing Maschine, diese hat einen internen "Speicher". Churchs Theorie basierte eher auf der Verarbeitung von ganzen Zahlen bei der Speicherbetrachtung nicht im Vordergrund war. Damit war er allerdings ein paar Jahre zu früh, denn die Turing Maschine entwickelte sich schnell zum Standardmodell. Dies ist primär dem geschuldet, dass die Betrachtung von Speichern zu dieser Zeit und bis heute, ein wichtiger Bestandteil der Informatik beziehungsweise der logischen Mathematik sind. Tatsächlich erkannte Gödel den Lambda calculus erst an, als er das Papier zur Turing Maschine sah und die Äquivalenz beider Systeme erkannte.\cite{sep-church-turing} In der heutigen Zeit wiederum wird durch zunehmende Abstraktion und Komplexität der Lambda calculus wieder wichtiger. Er taucht vermehrt in den gängigen Programmiersprachen auf. So bekamen Java, C\# und C++ in der letzten Zeit vermehrt Lambda Unterstützung. Dies ist den immer komplexer werdenden Problemen geschuldet, da man sich bei der Nutzung von Lamda keine Gedanken über den "Heap" beziehungsweise die Speicher an sich machen muss. Dies kann die Arbeit und Komplexität sowie Fehleranfälligkeit reduzieren.
 \subsection{Beispiele}
 Widmen wir uns also dem oben bereits gezeigten Beispiel des Hochzählens. Mit Funktionen würden wir dies in JavaScript wie folgt schreiben.
 \begin{minted}{javascript}
 incrementor = (x) => incrementor(x + 1)
 incrementor(0)
 \end{minted}
-Wie man hier schön sehen kann muss man sich nicht wie bei der Turing Maschine um Speicher kümmern was diese Darstellung unabhängiger vom eigentlichen Speichersystem macht. Wie dem auch sei, da Rekursion, also das selbst aufrufen einer Funktion komplizierter ist als es hier aussieht wird diese Funktion zwangsläufig irgendwann einen Fehler werfen. Bei der klassischen Methode ist es jedoch nicht so, hier ist der Hochzählvorgang lediglich durch die Eigentlichen Speicher begrenzt.
+Wie man hier schön sehen kann muss man sich nicht, wie bei der Turing Maschine, um Speicher kümmern, was diese Darstellung unabhängiger vom eigentlichen Speichersystem macht. Wie dem auch sei, da Rekursion, also das selbst aufrufen einer Funktion, komplizierter ist als es hier aussieht, wird diese Funktion zwangsläufig irgendwann einen Fehler werfen. Bei der klassischen Methode jedoch ist es nicht so, hier ist der Hochzählvorgang lediglich durch die eigentlichen Speicher begrenzt.
 \begin{minted}{java}
 int i = 0;
 while(true) {
 	i++;
 }
 \end{minted}
-Wenn wir uns nun ein gegen Beispiel anschauen. In diesem Fall versucht man eine Dynamische liste zu sortieren. Hierzu die Klassische version. Es wird dabei ein Standard Bubble Sort Algorithmus eingesetzt.\newpage
+Wenn wir uns nun ein Gegenbeispiel anschauen. In diesem Fall versucht man eine dynamische Liste zu sortieren. Folgend wird hier die Turing Methode genutzt, dabei wird ein Standard Bubbl-Sort Algorithmus eingesetzt.\newpage
 \begin{minted}{java}
 int temp;
 for (int i = 1; i < arrayList.size(); i++) {
@@ -36,4 +36,4 @@ Nun schauen wir uns dazu die Lambda Variante an.
 ArrayList<Integer> arrayList = new ArrayList<Integer>();
 arrayList.sort((x, y) -> x - y);
 \end{minted}
-Wie man sieht ist dies viel simpler, da es hier keinerlei Darstellung von speichern und anderem gibt. Ich kann zwar den Algorithmus auch genauer darstellen mit lambda Funktionen, aber warum sollte man.
+Wie man sieht ist dies viel simpler, da es hier keinerlei Darstellung von Speichern und dem eigentlichen Algorithmus bedarf. Man kann zwar den Algorithmus auch mit Lambda-Funktionen genauer darstellen. Dies ist allerdings nicht nötig, denn der Lambda calculus, hat hier den entscheidenden Vorteil. Durch die Turing Maschine lassen sich keine Abstraktionen modellieren, dieses Problem hat der Lambda calculus nicht.
