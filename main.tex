@@ -11,6 +11,9 @@
 \usepackage{hyperref}
 \renewcommand{\baselinestretch}{1.5}
 \renewcommand{\figurename}{Abbildung}
+\renewcommand{\contentsname}{Inhalt}
+
+\newcommand{\picturesource}[2]{\item {\figurename} \ref{#1}: \href{#2}{#2}}
 
 \author{Clara Maier, Nico Fröhlich}
 \title{Seminarkurs - Alan Turing}
@@ -31,9 +34,11 @@
 \section*{Bildquellen}
 {\renewcommand\labelitemi{}
 \begin{itemize}
-\item {\figurename} \ref{fig:turing}: \href{https://blog.sciencemuseum.org.uk/wp-content/uploads/2013/12/Alan-Turing-29-March-1951-picture-credit-NPL-Archive-Science-Museum1.jpg}{https://blog.sciencemuseum.org.uk/wp-content/uploads/2013/12/Alan-Turing-29-March-1951-picture-credit-NPL-Archive-Science-Museum1.jpg}
-\item {\figurename} \ref{fig:rotorex}: \href{https://de.wikipedia.org/wiki/Enigma-Walzen#/media/Datei:Enigma_rotor_exploded_view.png}{https://de.wikipedia.org/wiki/Enigma-Walzen\#/media/Datei:\\Enigma\textunderscore rotor\textunderscore exploded\textunderscore view.png}
-\item {\figurename} \ref{fig:enigma}: \href{http://enigmamuseum.com/wp-content/uploads/2016/12/WiringDiagram-1024x776.jpg}{http://enigmamuseum.com/wp-content/uploads/2016/12/WiringDiagram-1024x776.jpg}
+\picturesource{fig:turing}{https://blog.sciencemuseum.org.uk/wp-content/uploads/2013/12/Alan-Turing-29-March-1951-picture-credit-NPL-Archive-Science-Museum1.jpg}
+\picturesource{fig:enigmaset}{https://d1e4pidl3fu268.cloudfront.net/10fd7805-c5e4-
+42ac-8f67-bc7d0a42e6d0/enigma\textunderscore machine.crop\textunderscore 720x540\textunderscore 68\%2C0.preview.jpg}
+\picturesource{fig:rotorex}{https://de.wikipedia.org/wiki/Enigma-Walzen\# /media/Datei:Enigma\textunderscore rotor\textunderscore exploded\textunderscore view.png}
+\picturesource{fig:enigma}{http://enigmamuseum.com/wp-content/uploads/2016/12/WiringDiagram-1024x776.jpg}
 \end{itemize}
 }
 
