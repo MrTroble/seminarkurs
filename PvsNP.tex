@@ -1,12 +1,14 @@
 \section{P versus NP}
 \label{P versus NP}
-P versus NP ist ein ungelöstes Problem der Mathematik wie auch der theoretischen Informatik, es behandelt die Frage, ob Probleme die man einfach überprüfen kann, auch einfach zu lösen sind oder auch ob P das Gleiche ist wie NP. Hierbei steht das P für polynomiell und NP für nicht-deterministisch polynomiell. Dieses Problem gehört zu den Millennium-Problemen und eine Lösung dieses Problems wird mit einer Millionen US-Dollar vom Clay Mathematics Institute in Cambridge belohnt. Das Problem wurde erstmal von zwei unabhängigen Personen in den 1970er Jahren entdeckt und bleibt bis heute ungelöst.
+P versus NP ist ein ungelöstes Problem der Mathematik wie auch der theoretischen Informatik, es behandelt die Frage, ob Probleme die man einfach überprüfen kann, auch einfach zu lösen sind oder auch ob P das Gleiche ist wie NP. Hierbei steht das P für polynomiell und NP für nicht-deterministisch polynomiell. Dieses Problem gehört zu den Millennium-Problemen und eine Lösung dieses Problems wird mit einer Millionen US-Dollar vom Clay Mathematics Institute in Cambridge belohnt.
 
 \subsection{Beispiel}
-Ein NP Problem für eine deterministische Turingmaschine ist das erraten eines mehrstelligen Passworts. Hierbei muss die Turingmaschine jede einzelne Kombination durchgehen und somit wird die benötigte Zeit um das Passwort zu erraten exponentiell länger. 
+Ein NP Problem für eine deterministische Turingmaschine ist das erraten eines mehrstelligen Passworts. Hierbei muss die Turingmaschine jede einzelne Kombination durchgehen und somit wird die benötigte Zeit um das Passwort zu erraten, mit der Länge des Passworts auch exponentiell länger. 
 Nehmen wir mal an, dass das Passwort ohne Berücksichtigung von Groß- und Kleinbuchstaben nur die 26 Buchstaben des Alphabets zur Verfügung hat. Somit hätten wir bei einem Passwort von einem Buchstaben 26 Möglichkeiten, bei einer Länge von zwei Buchstaben bereits 676 Möglichkeiten und bei einer Länge von zehn Buchstaben mehr als 141 Billionen Möglichkeiten.
-\linebreak
+\\
 Dagegen wird das Ganze zu einem P Problem, wenn das Passwort bekannt ist und nur noch die Richtigkeit überprüft werden muss. Diese Dauer der Überprüfung ist linear und somit für eine Turingmaschine in einer relativen kurzen Zeit zu erledigen.
 
-\subsection{Was wäre wenn P = NP?}
-Wenn jemand Beweisen würde das P dasselbe wie NP ist, dann hätte er auch einen Algorithmus durch jedes Verschlüsselungssystem der Menschheit gefunden, denn diese bauen alle darauf auf, das P nicht dasselbe wie NP ist.
+\subsection{Was wäre wenn P = NP}
+Würde jemand beweisen, dass P dasselbe ist wie NP, wäre die asymmetrische Kryptografie oder auch Public-Key-Kryptografie hinfällig, da diese auf dem Konzept beruht, das P nicht dasselbe ist wie NP. Somit wären die meisten elektronischen Sicherheitssysteme einfach zu knacken, da man sie dann in einer polynomischen Zeitspanne lösen könnte.
+Andererseits würde es auch dafür sorgen, dass die Fahrwegberechnungen zwischen verschiedenen Punkten ebenfalls polynomiell werden und somit in kürzerer Zeit effizientere Fahrwege berechnet werden können.
+
